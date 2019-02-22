@@ -1,6 +1,6 @@
 {% set name = "Beaker" %}
-{% set version = "1.10.0" %}
-{% set sha256 = "6072892918225f5a055413082f2ff285f3ebca6a3873a0d6e163253ba83f0450" %}
+{% set version = "1.10.1" %}
+{% set sha256 = "8eb05d9f7362dc5840b188ac7fff6146b41dceb000deab58a07e9c8da893ed9b" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
