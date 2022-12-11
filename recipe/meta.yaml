@@ -19,11 +19,11 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
     - setuptools
 
   run:
-    - python
+    - python >=3.6
     - funcsigs
 
 test:
@@ -31,14 +31,6 @@ test:
     - beaker
     - beaker.crypto
     - beaker.ext
-
-  requires:
-    - coverage
-    - mock
-    - nose
-    - pycrypto
-    - sqlalchemy
-    - webtest
 
 about:
   home: https://beaker.readthedocs.io/
