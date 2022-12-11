@@ -1,6 +1,6 @@
 {% set name = "Beaker" %}
-{% set version = "1.11.0" %}
-{% set sha256 = "ad5d1c05027ee3be3a482ea39f8cb70339b41e5d6ace0cb861382754076d187e" %}
+{% set version = "1.12.0" %}
+{% set sha256 = "2d5f427e3b13259c98c934cab0e428fc1c18a4c4b94acbdae930df7e7f51d1ec" %}
 
 package:
   name: {{ name|lower }}
@@ -14,17 +14,16 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
     - setuptools
 
   run:
-    - python
-    - funcsigs
+    - python >=3.6
 
 test:
   imports:
@@ -32,19 +31,12 @@ test:
     - beaker.crypto
     - beaker.ext
 
-  requires:
-    - coverage
-    - mock
-    - nose
-    - pycrypto
-    - sqlalchemy
-    - webtest
-
 about:
   home: https://beaker.readthedocs.io/
   license: BSD-3-Clause
+  license_file: LICENSE
   license_family: BSD
-  summary: 'A Session and Caching library with WSGI Middleware'
+  summary: A Session and Caching library with WSGI Middleware
   description: |
     Beaker is a web session and general caching library that includes WSGI
     middleware for use in web applications.
