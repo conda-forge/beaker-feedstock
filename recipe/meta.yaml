@@ -1,6 +1,6 @@
 {% set name = "Beaker" %}
-{% set version = "1.13.0" %}
-{% set sha256 = "e956cd8a35ad5de1b5212c7bff8fc01e2b3d34ab92466d24684c666abb8c9c30" %}
+{% set version = "1.14.0" %}
+{% set sha256 = "86eb92c27a262ce53658db48f00234c8941420308487bae61cd43d39bd97800c" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
